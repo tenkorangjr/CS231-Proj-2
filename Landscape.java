@@ -108,8 +108,24 @@ public class Landscape {
      */
     public ArrayList<Cell> getNeighbors(int row, int col) {
         ArrayList<Cell> res = new ArrayList<>();
-        for (int i = row - 1; i <= row + 1; i++) {
-            for (int j = col - 1; j <= col + 1; j++) {
+        int rowStart = row - 1;
+        int rowEnd = row + 1;
+        int colStart = col - 1;
+        int colEnd = col + 1;
+
+        if (row == 0) {
+            rowStart = row;
+        } else if (row == landscape.length - 1) {
+            rowEnd = row;
+        }
+
+        for (int i = rowStart; i <= rowEnd; i++) {
+            if (col == 0) {
+                colStart = col;
+            } else if (col == landscape[row].length - 1) {
+                colEnd = col;
+            }
+            for (int j = colStart; j <= colEnd; j++) {
                 if ((j == col) && (i == row)) {
                     continue;
                 }
@@ -143,12 +159,12 @@ public class Landscape {
     }
 
     public static void main(String[] args) {
-        Landscape myLandscape = new Landscape(10, 12);
+        Landscape myLandscape = new Landscape(10, 12, 0.5);
 
         System.out.println(myLandscape.getCols());
         System.out.println(myLandscape.getRows());
         System.out.println(myLandscape.getCell(5, 4));
-        System.out.println(myLandscape.getNeighbors(5, 4));
+        System.out.println(myLandscape.getNeighbors(9, 11));
         System.out.println(myLandscape);
     }
 }
