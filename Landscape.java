@@ -140,6 +140,16 @@ public class Landscape {
      * Advances the current Landscape by one step.
      */
     public void advance() {
+        Cell[][] temp = new Cell[this.getRows()][this.getCols()];
+
+        for (int row = 0; row < this.landscape.length; row++) {
+            for (int col = 0; col < this.landscape[row].length; col++) {
+                temp[row][col] = new Cell(this.landscape[row][col].getAlive());
+                temp[row][col].updateState(this.getNeighbors(row, col));
+            }
+        }
+
+        landscape = temp;
     }
 
     /**

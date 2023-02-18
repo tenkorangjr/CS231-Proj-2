@@ -137,10 +137,10 @@ public class LandscapeDisplay {
         LandscapeDisplay display = new LandscapeDisplay(scape, 6);
 
         // Uncomment below when advance() has been finished
-        // while (true) {
-        // Thread.sleep(10);
-        // scape.advance();
-        // display.repaint();
-        // }
+        while (true) {
+            Thread.sleep(10);
+            scape.advance();
+            display.repaint();
+        }
     }
 }
