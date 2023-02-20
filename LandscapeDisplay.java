@@ -19,11 +19,14 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -36,7 +39,7 @@ import javax.swing.JPanel;
 public class LandscapeDisplay {
     JFrame win;
     protected Landscape scape;
-    private LandscapePanel canvas;
+    public LandscapePanel canvas;
     private int gridScale; // width (and height) of each square in the grid
 
     /**
@@ -48,6 +51,7 @@ public class LandscapeDisplay {
     public LandscapeDisplay(Landscape scape, int scale) {
         // setup the window
         this.win = new JFrame("Game of Life");
+
         this.win.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.scape = scape;
@@ -62,6 +66,7 @@ public class LandscapeDisplay {
         this.win.add(this.canvas, BorderLayout.CENTER);
         this.win.pack();
         this.win.setVisible(true);
+
     }
 
     /**
@@ -97,17 +102,24 @@ public class LandscapeDisplay {
      * This inner class provides the panel on which Landscape elements
      * are drawn.
      */
-    private class LandscapePanel extends JPanel {
+    public class LandscapePanel extends JPanel implements ActionListener {
         /**
          * Creates the panel.
          * 
          * @param width  the width of the panel in pixels
          * @param height the height of the panel in pixels
          */
+        public JButton btn;
+        int listen = 1;
+
         public LandscapePanel(int width, int height) {
             super();
+            this.btn = new JButton("Stop");
             this.setPreferredSize(new Dimension(width, height));
             this.setBackground(Color.lightGray);
+            this.add(btn);
+
+            btn.addActionListener(this);
         }
 
         /**
@@ -124,6 +136,15 @@ public class LandscapeDisplay {
             // call the Landscape draw method here
             scape.draw(g, gridScale);
         } // end paintComponent
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Object source = e.getSource();
+            if (source.equals(this.btn)) {
+                listen = 0;
+                this.btn.setName("Stopped");
+            }
+        }
 
     } // end LandscapePanel
 
