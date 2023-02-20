@@ -1,18 +1,11 @@
 /*
-  Originally written by Bruce A. Maxwell a long time ago.
-  Updated by Brian Eastwood and Stephanie Taylor more recently
-  Updated by Bruce again in Fall 2018
-
-  Creates a window using the JFrame class.
-
-  Creates a drawable area in the window using the JPanel class.
-
-  The JPanel calls the Landscape's draw method to fill in content, so the
-  Landscape class needs a draw method.
-  
-  Students should not *need* to edit anything outside of the main method, 
-  but are free to do so if they wish. 
-*/
+ * Author: Michael Tenkorang
+ * Title: Cosmic Way Of Life
+ * Date: 02/19/2023
+ * CS 231
+ * Section B
+ * LandscapeDisplay.java
+ */
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -149,6 +142,7 @@ public class LandscapeDisplay {
     } // end LandscapePanel
 
     public void repaint() {
+        // Repaint the Display
         this.win.repaint();
     }
 

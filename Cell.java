@@ -1,3 +1,12 @@
+/*
+ * Author: Michael Tenkorang
+ * Title: Cosmic Way Of Life
+ * Date: 02/19/2023
+ * CS 231
+ * Section B
+ * Cell.java
+ */
+
 import java.util.ArrayList;
 
 public class Cell {
@@ -64,6 +73,9 @@ public class Cell {
         }
     }
 
+    /*
+     * Function to get the total of an arraylist arguments
+     */
     private static int getTotal(ArrayList<Cell> arr) {
         int total = 0;
         for (Cell cell : arr) {

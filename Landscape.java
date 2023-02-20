@@ -1,3 +1,12 @@
+/*
+ * Author: Michael Tenkorang
+ * Title: Cosmic Way Of Life
+ * Date: 02/19/2023
+ * CS 231
+ * Section B
+ * Landscape.java
+ */
+
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;

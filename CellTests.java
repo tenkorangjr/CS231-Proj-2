@@ -1,10 +1,11 @@
 /*
-file name:      CellTests.java
-Authors:        Max Bender & Naser Al Madi
-last modified:  9/18/2022
-
-How to run:     java -ea CellTests
-*/
+ * Author: Michael Tenkorang
+ * Title: Cosmic Way Of Life
+ * Date: 02/19/2023
+ * CS 231
+ * Section B
+ * CellTests.java
+ */
 
 import java.util.ArrayList;
 

@@ -1,3 +1,12 @@
+/*
+ * Author: Michael Tenkorang
+ * Title: Cosmic Way Of Life
+ * Date: 02/19/2023
+ * CS 231
+ * Section B
+ * Extension.java
+ */
+
 public class Extension {
     public static void main(String[] args) throws InterruptedException {
 
@@ -6,6 +15,9 @@ public class Extension {
         LandscapeDisplay display = new LandscapeDisplay(landscape, 6);
 
         for (int count = 0; count <= Integer.parseInt(args[3]); count++) {
+            if (display.canvas.listen == 0) {
+                break;
+            }
             landscape.advance();
             display.repaint();
             Thread.sleep(250);
