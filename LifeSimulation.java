@@ -14,7 +14,7 @@ public class LifeSimulation {
          * Create GUI for the Cosmic Way Of Life
          */
 
-        Landscape landscape = new Landscape(50, 50, 0.25);
+        Landscape landscape = new Landscape(50, 50, 0.85);
         LandscapeDisplay display = new LandscapeDisplay(landscape, 6);
 
         for (int count = 0; count <= 10000; count++) {

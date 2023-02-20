@@ -56,7 +56,7 @@ public class Landscape {
     public void reset() {
         for (int row = 0; row < landscape.length; row++) {
             for (int col = 0; col < landscape[row].length; col++) {
-                if (Math.random() < initialChance) {
+                if (Math.random() > initialChance) {
                     landscape[row][col] = new Cell(true);
                 } else {
                     landscape[row][col] = new Cell();
